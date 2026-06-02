@@ -3,27 +3,165 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Fábio Dantas — Portfólio" },
+      { name: "description", content: "Portfólio de Fábio Dantas — desenvolvimento (CODE) e Design / UX." },
+      { property: "og:title", content: "Fábio Dantas — Portfólio" },
+      { property: "og:description", content: "Portfólio de Fábio Dantas — desenvolvimento (CODE) e Design / UX." },
+      { property: "og:type", content: "website" },
+      {
+        property: "og:image",
+        content:
+          "https://api.builder.io/api/v1/image/assets/TEMP/99a1d5e9855cbc5954bf5bebfae1818139520730?width=582",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+const LOGO =
+  "https://api.builder.io/api/v1/image/assets/TEMP/f7b1b81530a33d7c41d87963d8ee399701132bb4?width=129";
+const PORTRAIT =
+  "https://api.builder.io/api/v1/image/assets/TEMP/99a1d5e9855cbc5954bf5bebfae1818139520730?width=582";
+const FLAG_BR =
+  "https://api.builder.io/api/v1/image/assets/TEMP/ac8f5687a0ead88ecd0c5ae4cdb441323a19d23a?width=56";
+const FLAG_US =
+  "https://api.builder.io/api/v1/image/assets/TEMP/6bb5a1cb45de80cdfc34d8f7220cff9422b050d1?width=56";
+
+const fontAdvent = { fontFamily: "'Advent Pro', system-ui, sans-serif" };
+const fontAgdasima = { fontFamily: "'Agdasima', system-ui, sans-serif" };
+const fontPlaywrite = { fontFamily: "'Playwrite CU', cursive" };
+
+function PortfolioCard({ label }: { label: string }) {
+  return (
+    <div className="relative w-full max-w-[260px] aspect-[232/127] bg-foreground text-background select-none">
+      <span
+        className="absolute left-[6%] top-1/2 -translate-y-1/2 origin-center font-bold uppercase tracking-tight text-[clamp(18px,2.4vw,34px)]"
+        style={{ ...fontAgdasima, transform: "translateY(-50%) rotate(-90deg)" }}
+      >
+        fábio
+      </span>
+      <div className="absolute inset-0 pl-[28%] pr-4 flex flex-col justify-center">
+        <span
+          className="font-bold uppercase leading-none tracking-tight text-[clamp(28px,4vw,49px)]"
+          style={fontAgdasima}
+        >
+          dantas
+        </span>
+        <span
+          className="uppercase leading-none tracking-tight text-[clamp(18px,2.4vw,32px)] mt-1"
+          style={fontAdvent}
+        >
+          {label}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* HEADER */}
+      <header className="w-full border-b border-foreground/10">
+        <div className="mx-auto max-w-7xl px-6 py-6 flex items-center justify-between gap-6 flex-wrap">
+          <img src={LOGO} alt="Fábio Dantas" className="h-10 w-auto" />
+          <nav className="flex items-center gap-8 uppercase" style={fontAdvent}>
+            <a
+              href="#code"
+              className="text-[clamp(20px,2vw,31px)] tracking-tight hover:text-primary transition-colors"
+            >
+              CODE
+            </a>
+            <a
+              href="#design"
+              className="text-[clamp(20px,2vw,31px)] tracking-tight hover:text-primary transition-colors"
+            >
+              Design / UX
+            </a>
+          </nav>
+          <div className="flex items-center gap-2">
+            <button aria-label="Português" className="block">
+              <img src={FLAG_BR} alt="Português" className="h-5 w-7 object-cover" />
+            </button>
+            <button aria-label="English" className="block">
+              <img src={FLAG_US} alt="English" className="h-5 w-7 object-cover" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* SOBRE */}
+      <section className="relative">
+        <h1
+          className="px-6 max-w-7xl mx-auto pt-10 pb-6 uppercase font-bold tracking-tight text-primary leading-none text-[clamp(64px,10vw,120px)]"
+          style={fontAgdasima}
+        >
+          SOBRE
+        </h1>
+        <div className="bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-7xl px-6 py-14 grid gap-10 md:grid-cols-[1.6fr_1fr] items-start">
+            <p
+              className="uppercase text-justify leading-snug tracking-tight text-[clamp(14px,1.2vw,17px)]"
+              style={fontAdvent}
+            >
+              <span className="block mb-3 font-extrabold text-[clamp(18px,1.7vw,23px)]">
+                WELCOME TO MY PORTFÓLIO!
+              </span>{" "}
+              Lorem ipsum dolor sit amet. Est obcaecati perferendis et voluptatem
+              earum quo enim odit ut quisquam deserunt rem nulla consequatur qui
+              eaque omnis. Eum quia velit et debitis sunt est delectus fuga eum
+              vitae similique sit itaque tempora vel impedit temporibus aut enim
+              molestiae. Qui fugiat maxime At iusto impedit et repudiandae dolor
+              et voluptatum nulla non nobis tenetur. Ab error amet in enim
+              corporis eos consequatur natus rem molestiae rerum ut galisum
+              mollitia ea suscipit illum qui sunt excepturi?
+              <br />
+              <br />
+              Non voluptatem consequuntur in veniam voluptatem est nulla dolor
+              hic sequi rerum in minima eaque qui perspiciatis omnis in corrupti
+              consectetur. In autem tempore ea dolorum iure ut impedit quae sit
+              alias error ut expedita dicta qui explicabo quae cum corrupti
+              mollitia. Ea minima cumque cum unde odio vel itaque nihil sed
+              sequi mollitia cum repellat veritatis a sunt minus.
+              <br />
+              <br />
+              Qui velit amet ut modi ducimus in possimus doloribus ut modi
+              reiciendis et natus internos et doloribus impedit. Ut voluptas
+              voluptates ad cumque quod eos tenetur fuga.
+            </p>
+            <div className="flex justify-center md:justify-end">
+              <img
+                src={PORTRAIT}
+                alt="Fábio Dantas"
+                className="w-full max-w-[291px] aspect-square object-cover border-4 border-foreground"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PORTFÓLIO */}
+      <section id="code" className="mx-auto max-w-7xl px-6 py-20 text-center">
+        <h2
+          className="text-[clamp(32px,5vw,51px)] leading-tight mb-14"
+          style={fontPlaywrite}
+        >
+          Conheça meu portfólio
+        </h2>
+        <div className="flex flex-wrap justify-center gap-10 md:gap-24">
+          <a href="#code" className="hover:-translate-y-1 transition-transform">
+            <PortfolioCard label="CODE" />
+          </a>
+          <a id="design" href="#design" className="hover:-translate-y-1 transition-transform">
+            <PortfolioCard label="design" />
+          </a>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-foreground/10 py-8 text-center text-sm uppercase tracking-wider" style={fontAdvent}>
+        © {new Date().getFullYear()} Fábio Dantas
+      </footer>
     </div>
   );
 }
