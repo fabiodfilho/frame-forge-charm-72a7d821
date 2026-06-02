@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/SiteHeader";
+import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,10 +24,6 @@ const LOGO =
   "https://api.builder.io/api/v1/image/assets/TEMP/f7b1b81530a33d7c41d87963d8ee399701132bb4?width=129";
 const PORTRAIT =
   "https://api.builder.io/api/v1/image/assets/TEMP/99a1d5e9855cbc5954bf5bebfae1818139520730?width=582";
-const FLAG_BR =
-  "https://api.builder.io/api/v1/image/assets/TEMP/ac8f5687a0ead88ecd0c5ae4cdb441323a19d23a?width=56";
-const FLAG_US =
-  "https://api.builder.io/api/v1/image/assets/TEMP/6bb5a1cb45de80cdfc34d8f7220cff9422b050d1?width=56";
 
 const fontAdvent = { fontFamily: "'Advent Pro', system-ui, sans-serif" };
 const fontAgdasima = { fontFamily: "'Agdasima', system-ui, sans-serif" };
@@ -59,36 +57,10 @@ function PortfolioCard({ label }: { label: string }) {
 }
 
 function Index() {
+  const { t } = useI18n();
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* HEADER */}
-      <header className="w-full border-b border-foreground/10">
-        <div className="mx-auto max-w-7xl px-6 py-6 flex items-center justify-between gap-6 flex-wrap">
-          <img src={LOGO} alt="Fábio Dantas" className="h-10 w-auto" />
-          <nav className="flex items-center gap-8 uppercase" style={fontAdvent}>
-            <a
-              href="#code"
-              className="text-[clamp(20px,2vw,31px)] tracking-tight hover:text-primary transition-colors"
-            >
-              CODE
-            </a>
-            <a
-              href="#design"
-              className="text-[clamp(20px,2vw,31px)] tracking-tight hover:text-primary transition-colors"
-            >
-              Design / UX
-            </a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <button aria-label="Português" className="block">
-              <img src={FLAG_BR} alt="Português" className="h-5 w-7 object-cover" />
-            </button>
-            <button aria-label="English" className="block">
-              <img src={FLAG_US} alt="English" className="h-5 w-7 object-cover" />
-            </button>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* SOBRE */}
       <section className="relative">
@@ -96,7 +68,7 @@ function Index() {
           className="px-6 max-w-7xl mx-auto pt-10 pb-6 uppercase font-bold tracking-tight text-primary leading-none text-[clamp(64px,10vw,120px)]"
           style={fontAgdasima}
         >
-          SOBRE
+          {t("about.title")}
         </h1>
         <div className="bg-primary text-primary-foreground">
           <div className="mx-auto max-w-7xl px-6 py-14 grid gap-10 md:grid-cols-[1.6fr_1fr] items-start">
@@ -105,7 +77,7 @@ function Index() {
               style={fontAdvent}
             >
               <span className="block mb-3 font-extrabold text-[clamp(18px,1.7vw,23px)]">
-                WELCOME TO MY PORTFÓLIO!
+                {t("about.welcome")}
               </span>{" "}
               Lorem ipsum dolor sit amet. Est obcaecati perferendis et voluptatem
               earum quo enim odit ut quisquam deserunt rem nulla consequatur qui
@@ -146,7 +118,7 @@ function Index() {
           className="text-[clamp(32px,5vw,51px)] leading-tight mb-14"
           style={fontPlaywrite}
         >
-          Conheça meu portfólio
+          {t("portfolio.title")}
         </h2>
         
       </section>
@@ -158,7 +130,7 @@ function Index() {
             className="uppercase font-bold tracking-tight leading-none text-foreground text-[clamp(48px,7vw,78px)]"
             style={fontAgdasima}
           >
-            contato
+            {t("contact.title")}
           </h2>
         </div>
         <div className="relative mt-6">
@@ -168,17 +140,17 @@ function Index() {
               <form className="flex-1 w-full grid gap-4" style={fontAdvent}>
                 <input
                   type="text"
-                  placeholder="NOME"
+                  placeholder={t("contact.name")}
                   className="w-full bg-transparent border-b-2 border-foreground/40 focus:border-primary outline-none py-2 uppercase tracking-wide"
                 />
                 <input
                   type="email"
-                  placeholder="E-MAIL"
+                  placeholder={t("contact.email")}
                   className="w-full bg-transparent border-b-2 border-foreground/40 focus:border-primary outline-none py-2 uppercase tracking-wide"
                 />
                 <textarea
                   rows={3}
-                  placeholder="MENSAGEM"
+                  placeholder={t("contact.message")}
                   className="w-full bg-transparent border-b-2 border-foreground/40 focus:border-primary outline-none py-2 uppercase tracking-wide resize-none"
                 />
                 <button
@@ -186,7 +158,7 @@ function Index() {
                   className="self-start mt-2 bg-foreground text-background px-8 py-3 uppercase tracking-widest hover:bg-primary transition-colors"
                   style={fontAgdasima}
                 >
-                  Enviar
+                  {t("contact.send")}
                 </button>
               </form>
             </div>
@@ -202,7 +174,7 @@ function Index() {
             className="text-center text-[clamp(28px,4.5vw,51px)] leading-tight"
             style={fontPlaywrite}
           >
-            Obrigado por visitar!
+            {t("thanks")}
           </h2>
         <br></br>
         </div>
@@ -220,7 +192,7 @@ function Index() {
             </div>
           </div>
           <div className="text-xs uppercase tracking-widest opacity-70" style={fontAdvent}>
-            © {new Date().getFullYear()} — Todos os direitos reservados
+            © {new Date().getFullYear()} — {t("footer.rights")}
           </div>
         </div>
       </footer>
