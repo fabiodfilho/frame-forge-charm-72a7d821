@@ -19,6 +19,11 @@ export const dict: Dict = {
   "footer.rights": { pt: "Todos os direitos reservados", en: "All rights reserved" },
   "code.page.title": { pt: "Projetos de Código", en: "Code Projects" },
   "code.page.desc": { pt: "Em breve: meus projetos de desenvolvimento.", en: "Coming soon: my development projects." },
+  "projects.title": { pt: "Projetos", en: "Projects" },
+  "project.ieccm.desc": {
+    pt: "A 'IECCM' é um projeto de rebrand que realizei para atualizar e fortalecer a identidade visual da marca. Durante o processo, trabalhei em uma nova logo, uma paleta de cores e uma tipografia que melhor representassem os valores e a seriedade da instituição. O objetivo foi modernizar a comunicação, tornando-a mais atraente e alinhada com o público-alvo, sem perder a essência da marca.",
+    en: "'IECCM' is a rebrand project I carried out to refresh and strengthen the brand identity. I worked on a new logo, color palette and typography that better represent the values and seriousness of the institution. The goal was to modernize the communication, making it more attractive and aligned with the audience without losing the brand essence.",
+  },
   "design.page.title": { pt: "Projetos de Design / UX", en: "Design / UX Projects" },
   "design.page.desc": { pt: "Em breve: meus projetos de design.", en: "Coming soon: my design projects." },
   "back.home": { pt: "← Voltar para Home", en: "← Back to Home" },
