@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { toast } from "sonner";
 import { useI18n } from "@/lib/i18n";
 
 const LOGO =
@@ -12,6 +13,11 @@ const fontAdvent = { fontFamily: "'Advent Pro', system-ui, sans-serif" };
 
 export function SiteHeader() {
   const { t, lang, setLang } = useI18n();
+  const changeLang = (next: "pt" | "en") => {
+    if (next === lang) return;
+    setLang(next);
+    toast.success(next === "pt" ? "Idioma alterado para Português" : "Language changed to English");
+  };
   return (
     <header className="w-full border-b border-foreground/10">
       <div className="mx-auto max-w-7xl px-6 py-6 flex items-center justify-between gap-6 flex-wrap">
@@ -38,7 +44,7 @@ export function SiteHeader() {
           <button
             type="button"
             aria-label="Português"
-            onClick={() => setLang("pt")}
+            onClick={() => changeLang("pt")}
             className={`block transition-opacity ${lang === "pt" ? "opacity-100 ring-2 ring-primary" : "opacity-60 hover:opacity-100"}`}
           >
             <img src={FLAG_BR} alt="Português" className="h-5 w-7 object-cover" />
@@ -46,7 +52,7 @@ export function SiteHeader() {
           <button
             type="button"
             aria-label="English"
-            onClick={() => setLang("en")}
+            onClick={() => changeLang("en")}
             className={`block transition-opacity ${lang === "en" ? "opacity-100 ring-2 ring-primary" : "opacity-60 hover:opacity-100"}`}
           >
             <img src={FLAG_US} alt="English" className="h-5 w-7 object-cover" />
