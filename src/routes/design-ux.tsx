@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteHeader } from "@/components/SiteHeader";
 import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/design-ux")({
@@ -15,9 +14,7 @@ export const Route = createFileRoute("/design-ux")({
 function DesignPage() {
   const { t } = useI18n();
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <SiteHeader />
-      <main className="mx-auto max-w-7xl px-6 py-24">
+    <main className="mx-auto max-w-7xl px-6 py-24">
         <h1
           className="uppercase font-bold tracking-tight text-primary leading-none text-[clamp(48px,8vw,96px)]"
           style={{ fontFamily: "'Agdasima', system-ui, sans-serif" }}
@@ -31,6 +28,5 @@ function DesignPage() {
           {t("back.home")}
         </Link>
       </main>
-    </div>
   );
 }

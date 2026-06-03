@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteHeader } from "@/components/SiteHeader";
 import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/code")({
@@ -77,9 +76,7 @@ function CodePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <SiteHeader />
-
+    <div className="overflow-x-hidden">
       {/* HERO faixa em gradiente azul */}
       <section
         className="w-full"
