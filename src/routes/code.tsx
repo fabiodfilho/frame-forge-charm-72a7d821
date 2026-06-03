@@ -21,13 +21,13 @@ const fontPlaywrite = { fontFamily: "'Playwrite CU', cursive" };
 const BANNER_IMG =
   "https://api.builder.io/api/v1/image/assets/TEMP/bec25a0bfe491fdab4bf039e2fbc1e5c0b91f640?width=539";
 const IMG_ABCODE =
-  "https://api.builder.io/api/v1/image/assets/TEMP/7d611a8989867c469192e741d7aacfbc46c842f9?width=1102";
+  "/abcodeimg.png";
 const IMG_CANVAS =
-  "https://api.builder.io/api/v1/image/assets/TEMP/8ea618db608a2a56e70dc81bb756ea96ef564554?width=1102";
+  "/canvasimg.png";
 const IMG_AVA =
-  "https://api.builder.io/api/v1/image/assets/TEMP/d822f87cf3173f9c86a06400b92b935e643121bc?width=1102";
+  "/avaunifacisaimg.png";
 const IMG_LITTLEHELP =
-  "https://api.builder.io/api/v1/image/assets/TEMP/b3d38501b6d1cfbd2c95abf747ed8915c91adb4e?width=1102";
+  "/litllehelpimg.png";
 
 type Project = {
   title: string;
