@@ -1,41 +1,39 @@
-## Objetivo
-Construir um portfólio de página única para **Fábio Dantas** (Code & Design/UX) replicando fielmente o layout Figma fornecido, totalmente responsivo.
 
-## Estrutura da página (`src/routes/index.tsx`)
+## Problemas a resolver
+1. Trocar idioma na Home não muda os textos hardcoded (seção SOBRE).
+2. Não há feedback visual ao alternar idioma.
+3. Footer (a partir de "contato") está duplicado em `index.tsx` e `code.tsx`, e ausente em `design-ux.tsx`. Precisa ser unificado, usando a versão de `code.tsx` como referência.
 
-1. **Header**
-   - Logo (imagem fornecida pelo Figma) à esquerda
-   - Nav central: "CODE" · "Design / UX"
-   - Bandeiras Brasil / EUA à direita (placeholder de troca de idioma, sem lógica)
+## Mudanças
 
-2. **Seção SOBRE** (faixa azul `#275DAB`)
-   - Título "SOBRE" em Agdasima azul
-   - Texto "WELCOME TO MY PORTFÓLIO!" + lorem ipsum à esquerda
-   - Foto com borda preta à direita (imagem do Figma)
+### 1. `src/lib/i18n.tsx` — novas chaves PT/EN
+- `about.p1`, `about.p2`, `about.p3`, `about.p4` (4 parágrafos do SOBRE)
+- `project.ieccm.title` ("Projetos de IECCM" / "IECCM Projects")
+- `lang.changed.pt` ("Idioma alterado para Português")
+- `lang.changed.en` ("Language changed to English")
 
-3. **Seção "Conheça meu portfólio"**
-   - Título em fonte cursiva Playwrite CU
-   - Dois cartões pretos lado a lado: "Fábio Dantas CODE" e "Fábio Dantas Design"
-   - (Sem páginas internas — apenas os cartões visuais como no modelo)
+### 2. Novo componente `src/components/SiteFooter.tsx`
+Extrair, a partir de `code.tsx`, o bloco que começa na seção `#contato` e vai até o `<footer>` final (CONTATO + OBRIGADO + FOOTER preto). Todos os textos via `t()`. Esse será o footer canônico.
 
-4. **Rodapé simples** com créditos.
+### 3. `src/routes/index.tsx`
+- Remover blocos CONTATO/OBRIGADO/FOOTER atuais.
+- Importar e renderizar `<SiteFooter />` no final.
+- Trocar os 4 parágrafos hardcoded da seção SOBRE por `t("about.p1..p4")`.
 
-## Design tokens (`src/styles.css`)
-- `--background`: `#FBFAF9` (off-white)
-- `--foreground`: `#10120E` (quase preto)
-- `--primary`: `#275DAB` (azul Figma)
-- Fontes via Google Fonts no `__root.tsx` head: **Agdasima** (display), **Advent Pro** (texto/nav), **Playwrite CU** (cursiva)
+### 4. `src/routes/code.tsx`
+- Remover blocos CONTATO/OBRIGADO/FOOTER (agora estão em `SiteFooter`).
+- Renderizar `<SiteFooter />` no final.
 
-## SEO
-- `head()` no index com title "Fábio Dantas — Portfólio", description, OG tags, og:image = foto do portfólio.
+### 5. `src/routes/design-ux.tsx`
+- Renderizar `<SiteFooter />` no final da página (atualmente não tem).
 
-## Considerações técnicas
-- Imagens consumidas direto das URLs do Builder.io fornecidas no HTML do Figma (sem precisar baixar).
-- Layout responsivo com Tailwind (flex/grid) — abandonar `position:absolute` do Figma.
-- Mobile: header colapsa, seção SOBRE empilha texto sobre foto, cartões empilhados.
-- Sem backend, sem Lovable Cloud.
+### 6. `src/components/SiteHeader.tsx`
+- No `onClick` das bandeiras, disparar `toast.success(...)` do `sonner` com a mensagem traduzida (`t("lang.changed.pt"|"lang.changed.en")`).
 
-## Arquivos a alterar/criar
-- `src/routes/index.tsx` — página completa
-- `src/routes/__root.tsx` — adicionar `<link>` Google Fonts + atualizar título padrão
-- `src/styles.css` — tokens de cor + utilitários de fonte
+### 7. `src/routes/__root.tsx`
+- Garantir `<Toaster richColors position="top-center" />` do `sonner` montado dentro do `LanguageProvider`.
+
+## Critério de sucesso
+- Trocar bandeiras traduz 100% dos textos visíveis na Home, /code e /design-ux.
+- Aparece um toast confirmando a troca de idioma.
+- Home, /code e /design-ux exibem exatamente o mesmo footer (contato + obrigado + rodapé preto).
