@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -76,22 +77,16 @@ function Index() {
               <span className="block mb-3 font-extrabold text-[clamp(18px,1.7vw,23px)]">
                 {t("about.welcome")}
               </span>{" "}
-              Sou Fábio Dantas, desenvolvedor Full Stack com interesse especial em 
-              UX Design e transformação digital e habilidade em desenvolvimento de software. Gosto de entender problemas, desenhar soluções e 
-               construir experiências que facilitem a vida das pessoas.
+              {t("about.p1")}
               <br />
               <br />
-              Formação acadêmica em Sistemas de Informação, com cursos complementares em UX Design.
+              {t("about.p2")}
               <br />
               <br />
-             Minha jornada na tecnologia me permitiu atuar em projetos de diferentes áreas, desde 
-             sistemas web e automações até iniciativas sociais e educacionais. Cada projeto é uma 
-             oportunidade de aprender, evoluir e criar algo que gere impacto positivo.
+              {t("about.p3")}
               <br />
               <br />
-              Neste espaço compartilho trabalhos que representam minhas competências em Front-end, 
-              Back-end, Design de Experiência do Usuário e otimização de processos, demonstrando como 
-              a tecnologia pode ser utilizada para conectar pessoas, resolver desafios e gerar valor.
+              {t("about.p4")}
             </p>
             <div className="flex justify-center md:justify-end">
               <img
