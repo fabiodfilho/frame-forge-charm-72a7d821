@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { LanguageProvider } from "../lib/i18n";
 import { PageTransition } from "../components/PageTransition";
 import { SiteHeader } from "../components/SiteHeader";
+import { Toaster } from "../components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -136,6 +137,7 @@ function RootComponent() {
             <Outlet />
           </PageTransition>
         </div>
+        <Toaster position="top-center" richColors />
       </LanguageProvider>
     </QueryClientProvider>
   );
