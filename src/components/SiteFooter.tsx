@@ -1,4 +1,5 @@
 import { useI18n } from "@/lib/i18n";
+import { FaBehance } from "react-icons/fa";
 
 const fontAdvent = { fontFamily: "'Advent Pro', system-ui, sans-serif" };
 const fontAgdasima = { fontFamily: "'Agdasima', system-ui, sans-serif" };
@@ -80,18 +81,16 @@ export function SiteFooter() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="https://www.behance.net/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Behance"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-background/40 text-background transition-colors hover:bg-primary hover:border-primary hover:text-primary-foreground"
-            >
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
-                <path d="M7.8 7.5c.86 0 1.62.08 2.3.27.69.18 1.27.45 1.76.81.49.37.86.84 1.13 1.41.27.57.41 1.27.41 2.09 0 .89-.2 1.63-.6 2.22-.4.59-1 1.08-1.81 1.46 1.1.32 1.92.86 2.46 1.64.54.78.81 1.71.81 2.81 0 .89-.17 1.65-.51 2.31-.34.65-.81 1.19-1.39 1.6-.59.42-1.27.72-2.04.92-.77.2-1.58.3-2.43.3H0V7.5h7.8Zm-.46 6.04c.7 0 1.27-.16 1.72-.49.45-.33.67-.86.67-1.6 0-.41-.07-.74-.22-1-.15-.26-.35-.46-.6-.61-.26-.15-.55-.25-.88-.31-.33-.06-.68-.09-1.04-.09H3.96v4.1h3.38Zm.2 6.36c.4 0 .78-.04 1.14-.12.36-.08.69-.21.97-.4.28-.18.5-.43.66-.74.16-.31.24-.7.24-1.18 0-.94-.27-1.62-.8-2.02-.53-.4-1.24-.6-2.12-.6H3.96v5.06h3.58ZM18.5 19.4c.54.52 1.32.79 2.34.79.73 0 1.36-.18 1.89-.55.53-.37.85-.76.97-1.18h3.13c-.5 1.55-1.27 2.66-2.3 3.32-1.03.67-2.28 1-3.74 1-1.02 0-1.94-.16-2.77-.49-.83-.32-1.53-.78-2.11-1.39-.58-.6-1.03-1.31-1.34-2.14-.31-.83-.47-1.74-.47-2.74 0-.96.16-1.86.48-2.69.32-.83.78-1.55 1.37-2.16.6-.61 1.31-1.09 2.13-1.45.83-.36 1.74-.54 2.74-.54 1.12 0 2.1.22 2.94.65.84.43 1.53 1.01 2.07 1.74.54.73.94 1.56 1.18 2.49.24.93.32 1.91.25 2.94H17.65c.06 1.18.37 2.03.85 2.4Zm4.13-6.48c-.43-.47-1.13-.71-2.04-.71-.6 0-1.1.1-1.49.31-.4.21-.71.47-.95.78-.24.31-.4.64-.49.97-.09.34-.14.62-.16.84h6.16c-.09-.99-.4-1.72-.83-2.19h-.2ZM17.5 8.86h7.62V7H17.5v1.86Z"/>
-              </svg>
-            </a>
+                href="https://www.behance.net/fabiodfilho/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Behance"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-background/40 text-background transition-colors hover:bg-primary hover:border-primary hover:text-primary-foreground"
+              >
+                <FaBehance className="h-5 w-5" />
+              </a>
             <a
-              href="https://github.com/"
+              href="https://github.com/fabiodfilho"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
