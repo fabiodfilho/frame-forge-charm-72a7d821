@@ -114,7 +114,7 @@ function Index() {
             className="group block max-w-[240px] w-full focus:outline-none focus:ring-4 focus:ring-primary/30 rounded-sm"
           >
             <img
-              src="https://i.ibb.co/N6X2hXfg/fabio-code.jpg"
+              src="/fabio-code.svg"
               alt="Fábio Dantas — Code"
               className="w-full aspect-[232/127] object-contain mx-auto border border-foreground bg-black transform transition-transform duration-200 group-hover:scale-105 group-hover:shadow-lg"
             />
@@ -126,7 +126,7 @@ function Index() {
             className="group block max-w-[240px] w-full focus:outline-none focus:ring-4 focus:ring-primary/30 rounded-sm"
           >
             <img
-              src="https://i.ibb.co/pjCn4gzG/fabio-design.jpg"
+              src="/fabio-design.svg"
               alt="Fábio Dantas — Design"
               className="w-full aspect-[232/127] object-contain mx-auto border border-foreground bg-black transform transition-transform duration-200 group-hover:scale-105 group-hover:shadow-lg"
             />

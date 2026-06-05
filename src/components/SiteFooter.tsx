@@ -1,10 +1,11 @@
 import { useI18n } from "@/lib/i18n";
 import { FaBehance } from "react-icons/fa";
+import { Link } from "@tanstack/react-router";
 
 const fontAdvent = { fontFamily: "'Advent Pro', system-ui, sans-serif" };
 const fontAgdasima = { fontFamily: "'Agdasima', system-ui, sans-serif" };
 const fontPlaywrite = { fontFamily: "'Playwrite CU', cursive" };
-
+  
 export function SiteFooter() {
   const { t } = useI18n();
   return (
@@ -72,12 +73,13 @@ export function SiteFooter() {
       <footer className="bg-foreground text-background py-12">
         <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="leading-none" style={fontAgdasima}>
-            <div className="uppercase font-bold tracking-tight text-[clamp(28px,3vw,44px)]">
+             <Link to="/" aria-label="Home" className="shrink-0"><div className="uppercase font-bold tracking-tight text-[clamp(28px,3vw,44px)]">
               fábio
             </div>
             <div className="uppercase font-bold tracking-tight text-[clamp(28px,3vw,43px)] -mt-1">
               dantas
-            </div>
+            </div></Link>
+            
           </div>
           <div className="flex items-center gap-4">
             <a
