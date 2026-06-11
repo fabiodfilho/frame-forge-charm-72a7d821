@@ -1,5 +1,5 @@
 import { useI18n } from "@/lib/i18n";
-import { FaBehance } from "react-icons/fa";
+import { FaBehance, FaLinkedin } from "react-icons/fa";
 import { Link } from "@tanstack/react-router";
 
 const fontAdvent = { fontFamily: "'Advent Pro', system-ui, sans-serif" };
@@ -82,6 +82,15 @@ export function SiteFooter() {
             
           </div>
           <div className="flex items-center gap-4">
+            <a
+                href="https://www.linkedin.com/in/fabiodantasfilho/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-background/40 text-background transition-colors hover:bg-primary hover:border-primary hover:text-primary-foreground"
+              >
+                <FaLinkedin className="h-5 w-5" />
+              </a>
             <a
                 href="https://www.behance.net/fabiodfilho/"
                 target="_blank"
